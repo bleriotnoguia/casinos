@@ -1,35 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import CasinoCard from "./components/CasinoCard";
 
-function App() {
-  const [count, setCount] = useState(0)
+const casinos = [
+  {
+    name: "Grosvenor Casinos",
+    logo: "/assets/img/grosvenor.png",
+    brandColor: "#03252B",
+    bonus: {
+      bet: "£10",
+      get: "£400",
+    },
+    rating: 5,
+  },
+  {
+    name: "Happy Spins",
+    logo: "/assets/img/happy.png",
+    brandColor: "#43082F",
+    bonus: {
+      bet: "£10",
+      get: "£400",
+    },
+    rating: 4,
+  },
+  {
+    name: "Hajper",
+    logo: "/assets/img/hajper.png",
+    brandColor: "#123156",
+    bonus: {
+      bet: "£10",
+      get: "£400",
+    },
+    rating: 3,
+  },
+];
 
+function App(): React.ReactElement {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="min-h-screen bg-gray-100 py-8 px-4">
+      <div className="mt-[60px] mobile-min:mx-[20px] tablet-min:mx-[30px] desktop_min:mx-[62px] desktop_max:mx-[110px] ">
+        <h1 className="text-2xl font-bold text-left mb-4 text-[#939393]">
+          Best Casinos 2024
+        </h1>
+        <div className="grid gap-5">
+          {casinos.map((casino, index) => (
+            <CasinoCard key={index} casino={casino} />
+          ))}
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
