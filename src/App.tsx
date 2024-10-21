@@ -36,8 +36,8 @@ const casinos = [
 
 function App(): React.ReactElement {
   return (
-    <div className="min-h-screen bg-gray-100 py-8 px-4">
-      <div className="mt-[60px] mobile-min:mx-[20px] tablet-min:mx-[30px] desktop_min:mx-[62px] desktop_max:mx-[110px] ">
+    <div className="min-h-screen bg-[#FFFFFF]">
+      <div className="mt-[60px] mobile_min:mx-[20px] tablet_min:mx-[30px] desktop_min:mx-[62px] desktop_max:mx-[110px] ">
         <h1 className="text-2xl font-bold text-left mb-4 text-[#939393]">
           Best Casinos 2024
         </h1>
